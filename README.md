@@ -1,35 +1,30 @@
-# 🤝 Сosmopolite
-Make a ES Module for NPM and a dist file for &lt;script> at the same time
+# 🎛️ Regulatio
+High performance regulated inputs with custom validation
 
 ## Why?
 
-When making open source libraries, you don't want to limit your users. I believe that any simple library should be installable in at least two ways:
-1. `npm install amazingLib`
-2. `<script src="https://amazingCDN.com/amazingLib.js"></script>`
+I like the React controllable inputs experience but I never knew how to ensure similar performance without React. I did my research and finally realized the solution.
 
-But obviously you don't want to develop two separate codebases.
-
-This is where Cosmopolite steps in.
+You're looking at it right now.
 
 ## What it does?
 
-It takes your NPM library you wrote with ES imports and makes the distributive script file out of it. Your users now can not only `npm install` your library, they also can include that generated file with a `<script>` tag and everything will work.
+It regulates <input> fields, allowing your users to enter only the values that are approved by your validation function. Validation function can be arbitrary and it is not limited to just regex. 
 
 ## Usage
-
-1. Make your own repo, use this repo as a template
-2. Go to `package.json` and change the `name` field. Let's say you changed it to `awesomeLib`
-3. Implement your library inside `src` folder
-4. Push changes. The `dist` folder will appear, there will be the `awesomeLib.js` file. This is your dist.
-5. Publish your library via NPM or Yarn to your favorite registry
-
-Now your library will be accessible via both
 ```
-npm install awesomeLib
+npm install uyouthe/regulatio
 ```
-and
+or
 ```HTML
-<script src="https://cdn.jsdelivr.net/gh/YOUR-GITHUB-LOGIN/awesomeLib/dist/awesomeLib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/uyouthe/regulatio/dist/regulatio.min.js"></script>
+```
+
+```JS
+const input = document.getElementById('your-input')
+const allowOnlyIntegersGreaterThanZero = value => /\d+/g.test(value) && parseInt(value, 10) > 0
+
+regulatio(input, allowOnlyIntegersGreaterThanZero)
 ```
 
 Enjoy!
