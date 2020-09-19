@@ -29,5 +29,6 @@ export default (element, filterFunction) => {
 
     return () => eventTypes.forEach(eventType => {
         element.removeEventListener(eventType, regulate)
+        console.log('gotcha')
     })
 }
