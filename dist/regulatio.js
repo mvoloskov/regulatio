@@ -32,7 +32,6 @@ var regulatio = (function () {
 
         return () => eventTypes.forEach(eventType => {
             element.removeEventListener(eventType, regulate);
-            console.log('gotcha');
         })
     };
 
