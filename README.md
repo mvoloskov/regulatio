@@ -24,7 +24,10 @@ or
 const input = document.getElementById('your-input')
 const allowOnlyIntegersGreaterThanZero = value => /\d*/g.test(value) && parseInt(value, 10) > 0
 
-regulatio(input, allowOnlyIntegersGreaterThanZero)
+const destroy = regulatio(input, allowOnlyIntegersGreaterThanZero)
+
+// remove all event listeners when we don't need them anymore
+destroy()
 ```
 
 Enjoy!
