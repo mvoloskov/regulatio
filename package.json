@@ -9,9 +9,18 @@
   "scripts": {
     "build-iife": "rollup -c"
   },
+  "files": [
+    "/src"
+  ],
+  "keywords": [
+    "html-inputs",
+    "validation",
+    "dom"
+  ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build-iife && git add dist"
+      "pre-commit": "npm run build-iife && git add dist",
+      "test": "exit 0"
     }
   },
   "devDependencies": {
