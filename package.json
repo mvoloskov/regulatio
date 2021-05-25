@@ -7,7 +7,8 @@
   "author": "mvoloskov",
   "license": "BSL-1.0",
   "scripts": {
-    "build-iife": "rollup -c"
+    "build-iife": "rollup -c",
+    "test": "exit 0"
   },
   "files": [
     "/src"
